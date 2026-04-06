@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Your name" />
+    <meta
+      name="keywords"
+      content="Museum, Carnegie Mellon University, Information Systems"
+    />
+    <meta name="description" content="MonoMuse membership and donations" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <title>MonoMuse | Support &amp; membership</title>
+    <script src="../static/script.js" defer></script>
+  </head>
+  <body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+      <header class="header"></header>
+      <nav class="nav_bar" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <button
+          type="button"
+          class="hamburger"
+          onclick="toggleNav()"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+        <div class="nav_links">
+          <a href="explore.html">Explore</a>
+          <a href="exhibitions.html">Exhibitions</a>
+          <a href="membership.html">Support &amp; membership</a>
+          <a class="cta" href="tickets.html">Buy Tickets</a>
+        </div>
+      </nav>
+      <main class="main" id="main-content">
+        <h1>Support &amp; membership</h1>
+        <h2>Membership</h2>
+        <p>
+          Members enjoy free admission, early exhibition access, and invites to
+          special programs. <a href="tickets.html">Choose the member ticket</a>
+          option at checkout if you already belong, or email
+          <a href="mailto:membership@monomuse.org">membership@monomuse.org</a>
+          to join.
+        </p>
+        <h2>Donations</h2>
+        <p>
+          Your gift helps MonoMuse present new media art and learning programs.
+          Contact <a href="mailto:give@monomuse.org">give@monomuse.org</a> to
+          learn about one-time and recurring donations.
+        </p>
+      </main>
+      <figure class="main_img">
+        <img
+          id="logo"
+          src="../static/Gemini_Generated_Image_3s03on3s03on3s03.png"
+          alt="MonoMuse Museum Logo"
+        />
+      </figure>
+      <footer class="footer">
+        <div class="footer-visitor">
+          <p><strong>Hours:</strong> Mon–Sun 10am–8pm</p>
+          <p>
+            <strong>Location:</strong>
+            <a href="explore.html#map-section">Map &amp; directions</a>
+          </p>
+          <p>
+            <strong>Contact:</strong>
+            <a href="mailto:hello@monomuse.org">hello@monomuse.org</a>
+            · <a href="tel:+14125550100">412-555-0100</a>
+          </p>
+        </div>
+        <p>© MonoMuse</p>
+        <p id="copyYear"></p>
+        <p class="footer-attrib">
+          Video: embedded via YouTube (see Explore page). Map data ©
+          <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+          contributors. Images: MonoMuse project assets.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
