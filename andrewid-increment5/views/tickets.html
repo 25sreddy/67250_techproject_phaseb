@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Your name" />
+    <meta
+      name="keywords"
+      content="Museum, Carnegie Mellon University, Information Systems"
+    />
+    <meta name="description" content="MonoMuse website redesign project" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <title>MonoMuse</title>
+    <script src="../static/script.js" defer></script>
+  </head>
+  <body onload="addYear()">
+    <div class="container">
+      <header class="header"></header>
+      <nav class="nav_bar">
+        <a href="../index.html">Home</a>
+        <button
+          type="button"
+          class="hamburger"
+          onclick="toggleNav()"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+        <div class="nav_links">
+          <a href="explore.html">Explore</a>
+          <a href="exhibitions.html">Exhibitions</a>
+          <a class="cta" href="tickets.html">Buy Tickets</a>
+        </div>
+      </nav>
+      <main class="main">
+        <h3>Ticket prices</h3>
+        <table>
+          <tr>
+            <th>Ticket Type</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>General</td>
+            <td>Standard admission for visitors</td>
+            <td>$18</td>
+          </tr>
+          <tr>
+            <td>Student</td>
+            <td>Discounted admission with valid student ID</td>
+            <td>$12</td>
+          </tr>
+          <tr>
+            <td>Member</td>
+            <td>Free admission for museum members</td>
+            <td>$0</td>
+          </tr>
+        </table>
+
+        <h3>April schedule</h3>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Hours</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>April 10, 2026</td>
+            <td>10am–8pm</td>
+            <td>
+              <button type="button" onclick="showTicketForm('April 10, 2026')">
+                Buy Now
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>April 17, 2026</td>
+            <td>10am–8pm</td>
+            <td>
+              <button type="button" onclick="showTicketForm('April 17, 2026')">
+                Buy Now
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>April 24, 2026</td>
+            <td>10am–8pm</td>
+            <td>
+              <button type="button" onclick="showTicketForm('April 24, 2026')">
+                Buy Now
+              </button>
+            </td>
+          </tr>
+        </table>
+
+        <form id="ticketForm">
+          <label for="purchaseName">Name</label>
+          <input id="purchaseName" name="purchaseName" type="text" required />
+
+          <br />
+
+          <label for="purchaseEmail">Email</label>
+          <input
+            id="purchaseEmail"
+            name="purchaseEmail"
+            type="email"
+            required
+          />
+
+          <br />
+
+          <label for="purchaseQty">Number of tickets</label>
+          <input
+            id="purchaseQty"
+            name="purchaseQty"
+            type="number"
+            required
+          />
+
+          <br />
+
+          <label for="selectedDate">Selected date</label>
+          <input id="selectedDate" name="selectedDate" type="text" readonly />
+
+          <br />
+
+          <button type="button" onclick="ticketFormSubmit()">Submit</button>
+        </form>
+      </main>
+      <figure class="main_img">
+        <img
+          id="logo"
+          src="../static/Gemini_Generated_Image_3s03on3s03on3s03.png"
+          alt="MonoMuse Museum Logo"
+        />
+      </figure>
+      <footer class="footer">
+        <p>© MonoMuse</p>
+        <p id="copyYear"></p>
+      </footer>
+    </div>
+  </body>
+</html>
