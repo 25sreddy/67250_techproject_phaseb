@@ -7,7 +7,7 @@
       name="keywords"
       content="Museum, Carnegie Mellon University, Information Systems"
     />
-    <meta name="description" content="MonoMuse website redesign project" />
+    <meta name="description" content="MonoMuse contemporary art and technology museum" />
     <link rel="stylesheet" href="./static/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap"
       rel="stylesheet"
     />
-    <title>MonoMuse</title>
+    <title>MonoMuse | Home</title>
     <script
       src="https://code.jquery.com/jquery-4.0.0.min.js"
       defer
@@ -23,9 +23,10 @@
     <script src="./static/script.js" defer></script>
   </head>
   <body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="container">
       <header class="header"></header>
-      <nav class="nav_bar">
+      <nav class="nav_bar" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <button
           type="button"
@@ -38,11 +39,13 @@
         <div class="nav_links">
           <a href="views/explore.html">Explore</a>
           <a href="views/exhibitions.html">Exhibitions</a>
+          <a href="views/membership.html">Support &amp; membership</a>
           <a class="cta" href="views/tickets.html">Buy Tickets</a>
         </div>
       </nav>
-      <main class="main">
-        <h2 id="greeting">Welcome to MonoMuse</h2>
+      <main class="main" id="main-content">
+        <h1 id="greeting">Welcome to MonoMuse</h1>
+        <h2>Museum overview</h2>
         <p id="shortIntro">
           MonoMuse is a contemporary museum where art and technology meet.
         </p>
@@ -56,8 +59,26 @@
         <button type="button" id="readMore">Read More</button>
         <button type="button" id="readLess">Read Less</button>
         <p>
-          <a class="cta" href="views/tickets.html">Buy Tickets</a>
+          <a class="cta" href="views/tickets.html">Buy tickets online</a>
         </p>
+
+        <h2>Informed by our ticket funnel analysis</h2>
+        <div class="research-callout">
+          <p>
+            Phase&nbsp;A data on MonoMuse’s old site showed visitors took
+            <strong>about 10 page views per purchase</strong>—roughly double a
+            typical checkout flow—and many sessions that clicked
+            <strong>Buy Tickets</strong> never finished, pointing to a long path
+            and frustrating checkout.
+          </p>
+          <p>
+            This redesign responds directly: <strong>Buy Tickets</strong> stays in
+            the navigation on <strong>every page</strong>, pricing and checkout
+            live on <strong>one tickets page</strong>, and the form uses
+            <strong>clear labels, live pricing, and inline errors</strong> so you
+            are less likely to lose your place before confirming your order.
+          </p>
+        </div>
       </main>
       <figure class="main_img">
         <img
@@ -67,8 +88,25 @@
         />
       </figure>
       <footer class="footer">
+        <div class="footer-visitor">
+          <p><strong>Hours:</strong> Mon–Sun 10am–8pm</p>
+          <p>
+            <strong>Location:</strong>
+            <a href="views/explore.html#map-section">Map &amp; directions</a>
+          </p>
+          <p>
+            <strong>Contact:</strong>
+            <a href="mailto:hello@monomuse.org">hello@monomuse.org</a>
+            · <a href="tel:+14125550100">412-555-0100</a>
+          </p>
+        </div>
         <p>© MonoMuse</p>
         <p id="copyYear"></p>
+        <p class="footer-attrib">
+          Video: embedded via YouTube (see Explore page). Map data ©
+          <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+          contributors. Images: MonoMuse project assets.
+        </p>
       </footer>
     </div>
   </body>

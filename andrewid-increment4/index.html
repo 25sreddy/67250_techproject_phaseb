@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Sahil Reddy" />
+    <meta
+      name="keywords"
+      content="Museum, Carnegie Mellon University, Information Systems"
+    />
+    <meta name="description" content="MonoMuse website redesign project" />
+    <link rel="stylesheet" href="./static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <title>MonoMuse</title>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.min.js"
+      defer
+    ></script>
+    <script src="./static/script.js" defer></script>
+  </head>
+  <body onload="addYear()">
+    <div class="container">
+      <header class="header"></header>
+      <nav class="nav_bar">
+        <a href="index.html">Home</a>
+        <a href="views/explore.html">Explore</a>
+        <a href="views/exhibitions.html">Exhibitions</a>
+        <a class="cta" href="views/tickets.html">Buy Tickets</a>
+      </nav>
+      <main class="main">
+        <h2 id="greeting">Welcome to MonoMuse</h2>
+        <p id="shortIntro">
+          MonoMuse is a contemporary museum where art and technology meet.
+        </p>
+        <p id="longIntro">
+          MonoMuse serves as a modern hub where the worlds of artistic
+          expression and digital advancement collide. By blending immersive
+          technology with traditional creativity, the museum provides a unique
+          space for guests to engage with evolving cultural landscapes through
+          tactile displays and ever-changing galleries.
+        </p>
+        <button type="button" id="readMore">Read More</button>
+        <button type="button" id="readLess">Read Less</button>
+        <p>
+          <a class="cta" href="views/tickets.html">Buy Tickets</a>
+        </p>
+      </main>
+      <figure class="main_img">
+        <img
+          id="logo"
+          src="./static/Gemini_Generated_Image_3s03on3s03on3s03.png"
+          alt="MonoMuse Museum Logo"
+        />
+      </figure>
+      <footer class="footer">
+        <p>© MonoMuse</p>
+        <p id="copyYear"></p>
+      </footer>
+    </div>
+  </body>
+</html>

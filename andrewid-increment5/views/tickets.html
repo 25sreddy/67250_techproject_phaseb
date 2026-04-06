@@ -7,7 +7,7 @@
       name="keywords"
       content="Museum, Carnegie Mellon University, Information Systems"
     />
-    <meta name="description" content="MonoMuse website redesign project" />
+    <meta name="description" content="MonoMuse tickets and checkout" />
     <link rel="stylesheet" href="../static/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,13 +15,14 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap"
       rel="stylesheet"
     />
-    <title>MonoMuse</title>
+    <title>MonoMuse | Tickets &amp; checkout</title>
     <script src="../static/script.js" defer></script>
   </head>
   <body onload="addYear()">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="container">
       <header class="header"></header>
-      <nav class="nav_bar">
+      <nav class="nav_bar" aria-label="Main navigation">
         <a href="../index.html">Home</a>
         <button
           type="button"
@@ -34,11 +35,39 @@
         <div class="nav_links">
           <a href="explore.html">Explore</a>
           <a href="exhibitions.html">Exhibitions</a>
+          <a href="membership.html">Support &amp; membership</a>
           <a class="cta" href="tickets.html">Buy Tickets</a>
         </div>
       </nav>
-      <main class="main">
-        <h3>Ticket prices</h3>
+      <main class="main" id="main-content">
+        <h1>Tickets &amp; visit planning</h1>
+        <p>
+          Plan your visit: review prices below, then complete checkout. We are
+          open <strong>Mon–Sun, 10am–8pm</strong>.
+        </p>
+        <div class="research-callout">
+          <p>
+            Our <strong>Data Analysis Report</strong> found that many users who
+            clicked <strong>Buy Tickets</strong> still abandoned checkout, and
+            that the old flow required far <strong>too many steps</strong> across
+            unrelated pages before payment.
+          </p>
+          <p>
+            This page keeps <strong>prices, schedule context, and checkout
+            together</strong>, shows your <strong>estimated total as you
+            choose</strong> type and quantity, and sends you to a
+            <strong>confirmation screen</strong> after <strong>Place Order</strong>
+            so the path from intent to “done” is short and predictable.
+          </p>
+          <p>
+            Time-of-day analysis in the same report pointed to
+            <strong>midday and afternoon</strong> as when visitors were most likely
+            to follow through—we are open <strong>10am–8pm daily</strong> so you
+            can align a real visit with those high-intent windows.
+          </p>
+        </div>
+
+        <h2>Ticket prices</h2>
         <table>
           <tr>
             <th>Ticket Type</th>
@@ -62,74 +91,65 @@
           </tr>
         </table>
 
-        <h3>April schedule</h3>
-        <table>
-          <tr>
-            <th>Date</th>
-            <th>Hours</th>
-            <th></th>
-          </tr>
-          <tr>
-            <td>April 10, 2026</td>
-            <td>10am–8pm</td>
-            <td>
-              <button type="button" onclick="showTicketForm('April 10, 2026')">
-                Buy Now
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>April 17, 2026</td>
-            <td>10am–8pm</td>
-            <td>
-              <button type="button" onclick="showTicketForm('April 17, 2026')">
-                Buy Now
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>April 24, 2026</td>
-            <td>10am–8pm</td>
-            <td>
-              <button type="button" onclick="showTicketForm('April 24, 2026')">
-                Buy Now
-              </button>
-            </td>
-          </tr>
-        </table>
+        <h2>Ticket checkout</h2>
+        <form id="checkoutForm" novalidate>
+          <label for="visitDate">Visit date (required)</label>
+          <input id="visitDate" name="visitDate" type="date" required />
+          <span id="visitDateError" class="field-error" role="alert"></span>
 
-        <form id="ticketForm">
-          <label for="purchaseName">Name</label>
-          <input id="purchaseName" name="purchaseName" type="text" required />
+          <label for="ticketType">Ticket type (required)</label>
+          <select id="ticketType" name="ticketType" required>
+            <option value="">Select type</option>
+            <option value="general">General ($18)</option>
+            <option value="student">Student ($12)</option>
+            <option value="member">Member (free)</option>
+          </select>
+          <span id="ticketTypeError" class="field-error" role="alert"></span>
 
-          <br />
-
-          <label for="purchaseEmail">Email</label>
+          <label for="ticketQty">Number of tickets (1–10, required)</label>
           <input
-            id="purchaseEmail"
-            name="purchaseEmail"
-            type="email"
-            required
-          />
-
-          <br />
-
-          <label for="purchaseQty">Number of tickets</label>
-          <input
-            id="purchaseQty"
-            name="purchaseQty"
+            id="ticketQty"
+            name="ticketQty"
             type="number"
+            min="1"
+            max="10"
+            step="1"
+            value="1"
             required
           />
+          <span id="ticketQtyError" class="field-error" role="alert"></span>
 
-          <br />
+          <p class="price-line">
+            Estimated total: $<span id="priceTotal">18.00</span>
+          </p>
 
-          <label for="selectedDate">Selected date</label>
-          <input id="selectedDate" name="selectedDate" type="text" readonly />
+          <label for="checkoutEmail">Email (required)</label>
+          <input
+            id="checkoutEmail"
+            name="checkoutEmail"
+            type="email"
+            autocomplete="email"
+            required
+          />
+          <span id="checkoutEmailError" class="field-error" role="alert"></span>
 
-          <br />
+          <label for="checkoutZip">ZIP code (optional)</label>
+          <input
+            id="checkoutZip"
+            name="checkoutZip"
+            type="text"
+            inputmode="numeric"
+            maxlength="5"
+            autocomplete="postal-code"
+          />
+          <span id="checkoutZipError" class="field-error" role="alert"></span>
 
-          <button type="button" onclick="ticketFormSubmit()">Submit</button>
+          <label>
+            <input id="mailingList" name="mailingList" type="checkbox" />
+            Join our mailing list
+          </label>
+
+          <button type="submit">Place Order</button>
         </form>
       </main>
       <figure class="main_img">
@@ -140,8 +160,25 @@
         />
       </figure>
       <footer class="footer">
+        <div class="footer-visitor">
+          <p><strong>Hours:</strong> Mon–Sun 10am–8pm</p>
+          <p>
+            <strong>Location:</strong>
+            <a href="explore.html#map-section">Map &amp; directions</a>
+          </p>
+          <p>
+            <strong>Contact:</strong>
+            <a href="mailto:hello@monomuse.org">hello@monomuse.org</a>
+            · <a href="tel:+14125550100">412-555-0100</a>
+          </p>
+        </div>
         <p>© MonoMuse</p>
         <p id="copyYear"></p>
+        <p class="footer-attrib">
+          Video: embedded via YouTube (see Explore page). Map data ©
+          <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+          contributors. Images: MonoMuse project assets.
+        </p>
       </footer>
     </div>
   </body>

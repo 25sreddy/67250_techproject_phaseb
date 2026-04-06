@@ -1,0 +1,100 @@
+/* Global styles */
+* {
+  padding: 5px;
+  margin: 5px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  line-height: 1.5;
+  font-style: normal;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Logo */
+#logo {
+  width: 18%;
+  display: block;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: transparent;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+}
+
+nav a:hover {
+  border-color: #c5a059;
+}
+
+#navselected {
+  color: #c5a059;
+}
+
+/* CTA button (Buy Tickets) */
+.cta {
+  background: #c5a059;
+  color: #1a1a1a;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.cta:hover {
+  border-color: transparent;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #a8a8a8;
+  padding: 18px 16px;
+  text-align: center;
+  color: #a8a8a8;
+  background: transparent;
+}
+
+/* Table styling (Tickets) */
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: fit-content;
+  background: #c5a059;
+  color: #1a1a1a;
+}
+
+tr:nth-child(even) {
+  background-color: #a8a8a8;
+  color: #1a1a1a;
+}
+
+/* Form styling (Checkout) */
+form * {
+  margin: auto;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #logo {
+    width: 40%;
+  }
+
+  nav {
+    gap: 6px;
+  }
+}
