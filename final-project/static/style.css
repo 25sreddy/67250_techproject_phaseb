@@ -157,6 +157,14 @@ button:focus-visible {
 .nav_bar a.cta,
 .nav_bar a.cta:visited {
   color: #1a1a1a;
+  background: #c5a059;
+  border: 1px solid transparent;
+}
+
+.nav_bar a.cta:hover {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: transparent;
 }
 
 .cta:hover {
