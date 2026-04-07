@@ -315,8 +315,8 @@ function initGallery() {
       alt: "MonoMuse logo with column and profile line art",
     },
     {
-      src: "../static/Gemini_Generated_Image_oyjbg1oyjbg1oyjb.png",
-      alt: "Approach to MonoMuse entrance and glass facade",
+      src: "../static/gallery-museum-interior.jpg",
+      alt: "Natural History Museum London grand interior hall with arches and visitors",
     },
   ];
   var galleryIndex = 0;

@@ -38,6 +38,14 @@
     "nav_bar nav_bar"
     "main main-img"
     "footer footer";
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 240px);
+  align-items: start;
+  column-gap: 12px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
@@ -47,11 +55,19 @@
 .nav_bar {
   grid-area: nav_bar;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
   background: transparent;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Home stays left; links + CTA group to the right */
+.nav_bar > a:first-of-type {
+  margin-right: auto;
 }
 
 .nav_links {
@@ -77,16 +93,22 @@
 
 .main_img {
   grid-area: main-img;
+  justify-self: stretch;
+  text-align: center;
 }
 
 .footer {
   grid-area: footer;
 }
 
-/* Logo */
+/* Logo (sidebar column: predictable size, not tiny % of viewport) */
 #logo {
-  width: 18%;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav_bar a {
@@ -114,9 +136,12 @@ button:focus-visible {
   color: #c5a059;
 }
 
+/* Active + CTA: .active alone made label gold-on-gold (invisible) */
 .nav_bar a.cta.active {
   color: #1a1a1a;
-  border-color: #ffffff;
+  background: #ffffff;
+  border: 2px solid #c5a059;
+  font-weight: 700;
 }
 
 /* CTA button (Buy Tickets) */
@@ -127,6 +152,11 @@ button:focus-visible {
   padding: 10px 12px;
   font-weight: 400;
   display: inline-block;
+}
+
+.nav_bar a.cta,
+.nav_bar a.cta:visited {
+  color: #1a1a1a;
 }
 
 .cta:hover {
@@ -309,15 +339,20 @@ form * {
       "main"
       "main-img"
       "footer";
+    grid-template-columns: 1fr;
   }
 
   #logo {
-    width: 40%;
+    max-width: 200px;
   }
 
   .nav_bar {
     gap: 6px;
     justify-content: flex-end;
+  }
+
+  .nav_bar > a:first-of-type {
+    margin-right: auto;
   }
 
   .hamburger {

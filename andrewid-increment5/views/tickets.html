@@ -93,20 +93,20 @@
 
         <h2>Ticket checkout</h2>
         <form id="checkoutForm" novalidate>
-          <label for="visitDate">Visit date (required)</label>
+          <label for="visitDate">Visit date</label>
           <input id="visitDate" name="visitDate" type="date" required />
           <span id="visitDateError" class="field-error" role="alert"></span>
 
-          <label for="ticketType">Ticket type (required)</label>
+          <label for="ticketType">Ticket type</label>
           <select id="ticketType" name="ticketType" required>
             <option value="">Select type</option>
-            <option value="general">General ($18)</option>
-            <option value="student">Student ($12)</option>
-            <option value="member">Member (free)</option>
+            <option value="general">General — $18</option>
+            <option value="student">Student — $12</option>
+            <option value="member">Member — free</option>
           </select>
           <span id="ticketTypeError" class="field-error" role="alert"></span>
 
-          <label for="ticketQty">Number of tickets (1–10, required)</label>
+          <label for="ticketQty">Number of tickets</label>
           <input
             id="ticketQty"
             name="ticketQty"
@@ -123,7 +123,7 @@
             Estimated total: $<span id="priceTotal">18.00</span>
           </p>
 
-          <label for="checkoutEmail">Email (required)</label>
+          <label for="checkoutEmail">Email</label>
           <input
             id="checkoutEmail"
             name="checkoutEmail"
@@ -133,7 +133,7 @@
           />
           <span id="checkoutEmailError" class="field-error" role="alert"></span>
 
-          <label for="checkoutZip">ZIP code (optional)</label>
+          <label for="checkoutZip">ZIP code</label>
           <input
             id="checkoutZip"
             name="checkoutZip"
@@ -175,7 +175,7 @@
         <p>© MonoMuse</p>
         <p id="copyYear"></p>
         <p class="footer-attrib">
-          Video: embedded via YouTube (see Explore page). Map data ©
+          Video: embedded via YouTube on the Explore page. Map data ©
           <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
           contributors. Images: MonoMuse project assets.
         </p>
